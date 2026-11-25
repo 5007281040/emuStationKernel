@@ -1,0 +1,15 @@
+11/24/26
+
+So, I will be looking through some extraneous optimizations that I can make through:
+
+1. Thread ownership (lcpus and cpugroups on systemd). This will be done so most threads can be given ownership to emulators.
+2. Stuff like swap priority, and how context switching will be done. Look more into that through some internet forums. This is about zRam.
+https://www.reddit.com/r/linux/comments/1mj5zxd/out_of_these_5_linux_tweaks_only_zram_and/
+
+3. Look at the OS's I/O scheduler. Look up a scheduler known as mq-deadline for SD cards. https://docs.kernel.org/block/switching-sched.html
+
+4. Look at the CPU governor. That can be found with "$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor" in terminal. 
+https://www.baeldung.com/linux/set-cpu-governor-all-cores
+
+5. Trim services off of systemd or openRC or whatever youre using. Systemd has. https://wiki.archlinux.org/title/Improving_performance/Boot_process
+THe wiki goes over a bunch of things to be done to make the process really nice. 
